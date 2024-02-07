@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>StudentEasy</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}"/>
+<!-- card link -->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/swiper-bundle.min.css')}}"/>
+
+
+        <link rel="stylesheet" href="{{url_for ('static', filename='css/cards.css')}}"/>
+	</head>
+	<header>
+		<div class="popup">
+			<button id=”close”>&times;</button>
+		</div>
+		<div class="video-container">
+		<video autoplay muted loop width="100%" height="auto">
+		<source src="{{url_for ('static', filename='circuit-27725.mp4')}}" type="video/mp4">
+		</video>
+		<div class="heading">
+			<div class="light">
+				<h1><span style="color:#FFFFFF; font-family:'Tahoma'; font-size:40px;">Student</span>
+					<span style="color:#FFEE33; font-family:'Times New Roman', serif; font-size:55px;">Easy</span>
+				</h1>		
+			</div>
+			<h1>
+				<br>
+				<marquee style=" color: rgb(0, 217, 255); font-size:18px; font-family: sans-serif; border: solid;">
+					<p style="color: #FFFFFF;">An online platform designed to simplify and enhance the learning experience of students through interactive tools and resources.</p>
+				</marquee>
+			</h1>
+		</div>
+		</div>
+		<a href="{{url_for ('login')}}">
+		<div class="login">
+			<button><i class="fas fa-user-circle" width="100px" style="color: black;"></i></button>
+		</div>
+		</a>
+		<div class="space"></div>
+		<div class="top">
+			<div class="top-nav">
+				<button style="margin-left:50px;" onclick="window.location.reload()">Home</button>
+			<button>Details</button>
+			<button>Services</button>
+			<a href="https://www.rvseng.ac.in/" rel="noopener" target="_blank"><button>About</button></a>
+			<button style="margin-right:50px;">Contact</button>
+			</div>
+			<!-- card -->
+			<div class="slide-container swiper">
+				<div class="slide-content">
+					<div class="card-wrapper swiper-wrapper">
+						<div class="card swiper-slide">
+							<div class="image-content">
+								<span class="overlay"></span>
+	
+								<div class="card-image">
+									<img src="{{url_for ('static', filename='Images/job_boards.png')}}" alt="" class="card-img">
+								</div>
+							</div>
+							<div class="card-content">
+								<h2 class="name">Job Search Engine</h2>
+								<p class="description">Discover your dream career with this comprehensive job search engine.
+									It connect job seekers with their ideal positions efficiently.</p>
+	
+								<a href="https://www.simplyhired.co.in/" rel="noopener" target="_blank"><button class="button">View More</button></a>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<div class="image-content">
+								<span class="overlay"></span>
+	
+								<div class="card-image">
+									<img src="{{url_for ('static', filename='Images/AI.png')}}" alt="" class="card-img">
+								</div>
+							</div>
+							<div class="card-content">
+								<h2 class="name">Talk to AI</h2>
+								<p class="description">TalkToAI is an advanced conversational AI platform designed to provide users with natural and interactive experiences.
+									 It enables answering and providing data.</p>
+	
+								<a href="{{url_for ('TalkToAI')}}" rel="noopener" target="_blank"><button class="button">View More</button></a>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<div class="image-content">
+								<span class="overlay"></span>
+	
+								<div class="card-image">
+									<img src="{{url_for ('static', filename='Images/Notebooks.png')}}" alt="" class="card-img">
+								</div>
+							</div>
+							<div class="card-content">
+								<h2 class="name">Notebook</h2>
+								<p class="description">The notebook for all academic students and all subjects available
+								we are planned to update number of resources to the students.</p>
+	
+								<a href="https://annauniversityedu.blogspot.com/" rel="noopener" target="_blank"><button class="button">View More</button></a>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<div class="image-content">
+								<span class="overlay"></span>
+	
+								<div class="card-image">
+									<img src="{{url_for ('static', filename='Images/digital-painting.jpg')}}" alt="" class="card-img">
+								</div>
+							</div>
+							<div class="card-content">
+								<h2 class="name">Text-to-Image</h2>
+								<p class="description">Transforming words into captivating visuals, 
+									this text-to-image service harnesses the power of AI to create imagery that brings your ideas to life. </p>
+	
+								<a href="https://hotpot.ai/art-generator?s=site-menu" rel="noopener" target="_blank"><button class="button">View More</button></a>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<div class="image-content">
+								<span class="overlay"></span>
+	
+								<div class="card-image">
+									<img src="{{url_for ('static', filename='Images/creative_workspace.webp')}}" alt="" class="card-img">
+								</div>
+							</div>
+							<div class="card-content">
+								<h2 class="name">Digital Drawing</h2>
+								<p class="description">Unlock your artistic potential with this digital drawing workspace service. 
+									It provides a seamless platform for artists to create, explore, and express their creativity.</p>
+	
+								<a href="https://sketch.io/sketchpad/" rel="noopener" target="_blank"><button class="button">View More</button></a>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<div class="image-content">
+								<span class="overlay"></span>
+	
+								<div class="card-image">
+									<img src="{{url_for ('static', filename='Images/presentation-Templates.webp')}}" alt="" class="card-img">
+								</div>
+							</div>
+							<div class="card-content">
+								<h2 class="name">Presentation-Templates</h2>
+								<p class="description">This service offers a wide range of customizable options to help you captivate your audience and deliver impactful presentations effortlessly.</p>
+	
+								<a href="https://pitch.com/templates" rel="noopener" target="_blank"><button class="button">View More</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<div class="swiper-button-next swiper-navBtn"></div>
+				<div class="swiper-button-prev swiper-navBtn"></div>
+				<div class="swiper-pagination"></div>
+	
+			</div>
+		</div>
+	</header>
+
+
+
+
+	<script src="{{url_for ('static', filename='js/script.js')}}"></script>
+	<script src="{{url_for ('static', filename='js/swiper-bundle.min.js')}}"></script>
+
+    <script src="{{url_for ('static', filename='js/cards.js')}}"></script>
+	<script src="https://kit.fontawesome.com/5063a1ece8.js" crossorigin="anonymous"></script>
+	</body>
+
+
+</html>

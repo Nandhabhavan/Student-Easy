@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login/SignUp</title>
+    <link rel="stylesheet" href="{{url_for ('static', filename='./css/login.css')}}">
+    <script src="{{url_for ('static', filename='./js/login.js')}}" type = "text/javascript"></script>
+</head>
+<body>
+  <div class="card">
+      <div class="card-features">
+        <div class="card-feature">
+          <span>&check;</span>
+          <h5>Quick and free sign-up</h5>
+          <p>Enter your email address to create an account</p>
+        </div>
+
+        <div class="card-feature">
+          <span>&check;</span>
+          <h5>Quick and free sign-up</h5>
+          <p>Enter your email address to create an account</p>
+        </div>
+
+        <div class="card-feature">
+          <span>&check;</span>
+          <h5>Quick and free sign-up</h5>
+          <p>Enter your email address to create an account</p>
+        </div>
+      </div>
+
+      <div class="card-form">
+        <!-- Card form template -->
+        <h4>Create your account</h4>
+
+        <form action="#">
+          <div class="form-item">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email address"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="full-name">Full Name</label>
+            <input
+              type="full-name"
+              id="full-name"
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <div class="form-item">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="get-updates" />
+            <label for="get-updates">
+              Get updates and notifications about our product
+            </label>
+          </div>
+
+          <button type="submit">Create an account</button>
+          <a href="{{url_for ('home')}}" target="_parent">
+
+          <div class="cancel-button">
+              <input
+                      type="button"
+                      value="Cancel"
+                      style="background-color: transparent; border: none; color: white; font-size: 16px;cursor: pointer;"
+              />
+          </div>
+        </a>
+          <p style="margin-left: 28%; font-size: 15px; margin-top: 5%;">Already have an account?</p>
+          
+          <div class="signIn">
+            <button style="text-decoration: none; width:auto; font-size: 15px;" onclick="document.getElementById('id01').style.display='block'"> SignIn</button>
+            <div id="id01" class="modal">
+      
+              <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <img src="{{url_for ('static', filename='./Images/AI.png')}}" alt="Avatar" class="avatar">
+                </div>
+            
+                <div class="container">
+                  <label for="uname"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" name="uname" required>
+            
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                  <button type="submit">Login</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+                </div>
+            
+                <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <script src="{{url_for ('static', filename='./js/signIn.js')}}"></script>
+</body>
+</html>

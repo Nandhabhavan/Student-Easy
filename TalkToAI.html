@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT DEMO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{url_for ('static', filename='./css/TalkToAI.css')}}">
+</head>
+<body>
+  <div id="loading-animation" style="z-index: 300;display: none;">
+    <img class="loading-icon" style="object-fit: scale-down;" width="150px" src="https://i.pinimg.com/originals/90/26/70/902670556722cfd9259344b2f24c8cfc.gif" alt="">
+  </div>
+
+  <div class="video-container">
+		<video autoplay muted loop width="1950px">
+		<source src="{{url_for ('static', filename='pexels-pressmaster-3141208-3840x2160-25fps.mp4')}}" type="video/mp4">
+		</video>
+  </div>
+
+  <div class="list answer-pre">
+    <p id="sender">send:</p>
+    <p id="generated_text">response:</p>
+  </div>
+
+  <form id="form" class="footer">
+    <input class="comment" placeholder="send message" id="user-text">
+    <!-- <span id="final"></span> -->
+    <!-- <span id="interim"></span> -->
+    <button class="btn-send" type="submit">
+      <i class="fa fa-microphone microphone-ico" style="color: aqua; font-size: 18px; border-style: none;"></i>
+    </button>
+
+    <!-- <button class="btn-stop" id="stop" type="submit">
+      <i class="fa fa-microphone-slash" style="color: rgba(255, 60, 0, 0.952); font-size: 18px; border-style: none;"></i>
+    </button> -->
+  </form>
+
+  <script>
+    $(document).ready(function() {
+      $("#form").submit(function(event) {
+          event.preventDefault(); // prevent form from submitting normally
+          showLoadingAnimation();
+          var input_text = $("#user-text").val(); // get input text from form
+          $("#sender").text(input_text);
+          $("#user-text").val("");
+
+          // send AJAX POST request to Flask backend server
+          $.ajax({
+              type: "POST",
+              url: "/TalkToAI",
+              data: { prompt: input_text }, // send input text as data
+              success: function(response) {
+                  // display response text on HTML page
+                  $("#generated_text").text(response.generated_text);
+                  $('.loading-animation').css('display','none');
+                  // stopLoadingAnimation();
+              },
+              error: function(xhr, status, error) {
+                  console.error("Error:", error);
+                  
+              }
+          });
+      });
+    });
+  </script>
+</body>
+<script src="{{url_for ('static', filename='./js/TalkToAI.js')}}"></script>
+</html>
